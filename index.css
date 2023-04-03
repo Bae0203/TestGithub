@@ -1,0 +1,27 @@
+#id,
+#password,
+#btn {
+  display: block;
+  font-size: 16px;
+}
+
+input {
+  width: 300px;
+  padding: 16px;
+  margin-bottom: 32px;
+  border-radius: 100000px;
+  border: 1px solid black;
+}
+
+#btn {
+  box-shadow: none;
+  padding: 16px 32px;
+  border-radius: 100000px;
+  border: none;
+  color: green;
+  background-color: rgb(154, 255, 123);
+}
+
+#btn:hover {
+  background-color: rgb(99, 170, 78);
+}
