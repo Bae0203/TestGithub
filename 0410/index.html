@@ -18,17 +18,19 @@
       <button id="four">4</button>
       <button id="five">5</button>
       <button id="six">6</button>
-      <button id="minus">-</button>
+      <button id="minus" onclick="{MinusButton()}">-</button>
     </nav>
     <nav>
       <button id="one">1</button>
       <button id="two">2</button>
       <button id="three">3</button>
+      <button id="multi">*</button>
     </nav>
     <nav>
       <button id="zero">0</button>
-      <button></button>
-      <button></button>
+      <button id="divide" onclick="{DivideButton()}">/</button>
+      <button id="divide" onclick="{RemainButton()}">%</button>
+      <button id="result" onclick="{Result()}">=</button>
     </nav>
     <p id="realValue">0</p>
 

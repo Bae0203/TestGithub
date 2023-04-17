@@ -12,6 +12,10 @@ let CalculatorPTag = document.querySelector("#CalculatorValue");
 let realValue = document.querySelector("#realValue");
 
 let CalculatorValue1 = "";
+let Secondflag = false; //boolean
+let MultiSecondflag = false; //boolean
+let DivideSecondflag = false; //boolean
+let RemainSecondflag = false; //boolean
 let sum = 0;
 
 function OnClickButton(value) {
@@ -37,4 +41,96 @@ function PlusButton() {
   realValue.innerText = sum;
 }
 
-function MinusButton() {}
+function MinusButton() {
+  if (Secondflag) {
+    sum -= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  } else {
+    sum += Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  }
+  Secondflag = !Secondflag;
+}
+
+function MultiButton() {
+  if (MultiSecondflag) {
+    sum *= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  } else {
+    sum += Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  }
+  MultiSecondflag = !MultiSecondflag;
+}
+
+function DivideButton() {
+  if (DivideSecondflag) {
+    sum /= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  } else {
+    sum += Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  }
+  DivideSecondflag = !DivideSecondflag;
+}
+
+function RemainButton() {
+  if (RemainSecondflag) {
+    sum %= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  } else {
+    sum += Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  }
+  RemainSecondflag = !RemainSecondflag;
+}
+
+function Result() {
+  if (Secondflag) {
+    sum -= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+    Secondflag = !Secondflag;
+  } else if (MultiSecondflag) {
+    sum *= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+    MultiSecondflag = !MultiSecondflag;
+  } else if (DivideSecondflag) {
+    sum /= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+    MultiSecondflag = !MultiSecondflag;
+  } else if (RemainSecondflag) {
+    sum %= Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+    RemainSecondflag = !RemainSecondflag;
+  } else {
+    sum += Number(CalculatorValue1);
+    CalculatorPTag.innerText = "0";
+    CalculatorValue1 = "";
+    realValue.innerText = sum;
+  }
+  sum = 0;
+}
